@@ -128,35 +128,93 @@ const Stopwatch = ({billing, ps, category, price}) => {
     }
 
     return (
-        <div className="bg-white rounded-lg shadow-md p-4 cursor-default">
-            <div className="w-full flex justify-between items-start m-0">
-                <div className="flex flex-col justify-start items-start">
-                    <h2 className="font-bold text-xl text-center m-0 flex justify-start items-center gap-1">{ps} <span className={`text-[0.6rem] px-1 rounded-r-full rounded-l-full ${categoryColor}`}>{category}</span></h2>
-                    <span className="text-sm">{formatPrice(price)}/Jam</span>
-                </div>
-                <div className="flex flex-col justify-center items-end">
-                    <h2 className="font-bold text-xl text-end m-0">Billing {billing}</h2>
-                    <span className={`text-sm text-end ${color}`}>{currentPrice(price)}</span>
-                </div>
-            </div>
-            <h1 className={`w-full font-mono text-6xl font-bold text-center my-3 ${color}`}>{timeDisplay}</h1>
-            <form action="" className={`w-full ${elapsedTime > 0 ? 'pointer-events-none' : 'pointer-events-auto'} flex justify-center items-center gap-2 mb-4`}>
-                <select onChange={handleChangeTimeSelect} name="timeSelect" id="timeSelect" className={`w-full p-1 rounded border border-gray-300 focus:ring-0 focus:outline-1 focus:outline-green-400 focus:shadow-md ${elapsedTime > 0 ? 'bg-gray-200 text-black/50' : ''}`} value={timeSelect}>
-                    <option value="0">Normal</option>
-                    <option value="1">1 Jam</option>
-                    <option value="2">2 Jam</option>
-                    <option value="3">3 Jam</option>
-                </select>
-                {/* <button className="w-fit px-2 py-1 bg-gradient-to-b from-green-400 to-green-500 hover:bg-gradient-to-t rounded-md cursor-pointer transition-all duration-300 hover:shadow-md text-black/70 hover:text-black text-sm"><i className="bi-check2-circle me-1"></i></button> */}
-            </form>
-                {/* {elapsedTime + (jam * timeSelect)} - {elapsedTimeDecrease} */}
-            <div className="w-full flex justify-between items-center">
-                <Button click={start} title="Start" color={running ? 'from-blue-400/30 to-blue-500/30 pointer-events-none cursor-none' : 'from-blue-400 to-blue-500 pointer-events-auto cursor-pointer'} icon="play-fill" />
-                <Button click={stop} title="Stop" color={!running ? 'from-red-400/30 to-red-500/30 pointer-events-none cursor-none' : 'from-red-400 to-red-500 pointer-events-auto cursor-pointer'} icon="stop-fill" />
-                <Button click={finish} title="Finish" color={running || elapsedTime <= 0 ? 'from-gray-400/30 to-gray-500/30 pointer-events-none cursor-none' : 'from-gray-400 to-gray-500 pointer-events-auto cursor-pointer'} icon="check2-all" />
-            </div>
+      <div className="bg-white rounded-lg shadow-md p-4 cursor-default">
+        <div className="w-full flex justify-between items-start m-0">
+          <div className="flex flex-col justify-start items-start">
+            <h2 className="font-bold text-xl text-center m-0 flex justify-start items-center gap-1">
+              {ps}{" "}
+              <span
+                className={`text-[0.6rem] px-1 rounded-r-full rounded-l-full ${categoryColor}`}
+              >
+                {category}
+              </span>
+            </h2>
+            <span className="text-sm">{formatPrice(price)}/Jam</span>
+          </div>
+          <div className="flex flex-col justify-center items-end">
+            <h2 className="font-bold text-xl text-end m-0">
+              Billing {billing}
+            </h2>
+            <span className={`text-sm text-end ${color}`}>
+              {currentPrice(price)}
+            </span>
+          </div>
         </div>
-    )
+        <h1
+          className={`w-full font-mono text-6xl font-bold text-center my-3 ${color}`}
+        >
+          {timeDisplay}
+        </h1>
+        <form
+          action=""
+          className={`w-full ${
+            elapsedTime > 0 ? "pointer-events-none" : "pointer-events-auto"
+          } flex justify-center items-center gap-2 mb-4`}
+        >
+          <select
+            onChange={handleChangeTimeSelect}
+            name="timeSelect"
+            id="timeSelect"
+            className={`w-full p-1 rounded border border-gray-300 focus:ring-0 focus:outline-1 focus:outline-green-400 focus:shadow-md ${
+              elapsedTime > 0 ? "bg-gray-200 text-black/50" : ""
+            }`}
+            value={timeSelect}
+          >
+            <option value="0">Normal</option>
+            <option value="1">1 Jam</option>
+            <option value="2">2 Jam</option>
+            <option value="3">3 Jam</option>
+            <option value="4">4 Jam</option>
+            <option value="5">5 Jam</option>
+            <option value="6">6 Jam</option>
+          </select>
+          {/* <button className="w-fit px-2 py-1 bg-gradient-to-b from-green-400 to-green-500 hover:bg-gradient-to-t rounded-md cursor-pointer transition-all duration-300 hover:shadow-md text-black/70 hover:text-black text-sm"><i className="bi-check2-circle me-1"></i></button> */}
+        </form>
+        {/* {elapsedTime + (jam * timeSelect)} - {elapsedTimeDecrease} */}
+        <div className="w-full flex justify-between items-center">
+          <Button
+            click={start}
+            title="Start"
+            color={
+              running
+                ? "from-blue-400/30 to-blue-500/30 pointer-events-none cursor-none"
+                : "from-blue-400 to-blue-500 pointer-events-auto cursor-pointer"
+            }
+            icon="play-fill"
+          />
+          <Button
+            click={stop}
+            title="Stop"
+            color={
+              !running
+                ? "from-red-400/30 to-red-500/30 pointer-events-none cursor-none"
+                : "from-red-400 to-red-500 pointer-events-auto cursor-pointer"
+            }
+            icon="stop-fill"
+          />
+          <Button
+            click={finish}
+            title="Finish"
+            color={
+              running || elapsedTime <= 0
+                ? "from-gray-400/30 to-gray-500/30 pointer-events-none cursor-none"
+                : "from-gray-400 to-gray-500 pointer-events-auto cursor-pointer"
+            }
+            icon="check2-all"
+          />
+        </div>
+      </div>
+    );
 }
 
 export default Stopwatch
