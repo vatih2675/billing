@@ -64,15 +64,19 @@ function App() {
       <BrowserRouter>
         <section className="w-full p-4">
           <div className="w-full rounded-4xl flex mb-4 bg-gray-950 text-white justify-center items-center sticky top-4">
-            <h1 className="text-center  w-fit ps-5 pe-3 py-2 text-2xl flex justify-center items-center text-gray-200">
+            <NavLink
+              to={"/billing"}
+              className="text-center w-fit ps-5 pe-3 py-2 text-2xl flex justify-center items-center text-gray-200"
+            >
               <i className="bi-playstation me-3 text-4xl"></i>
-              <span className="text-4xl font-bold text-red-500">V</span>
+              <span className="text-4xl font-bold text-lime-400">V</span>
               atih&nbsp;
-              <span className="text-4xl font-bold text-red-500">G</span>
+              <span className="text-4xl font-bold text-lime-400">G</span>
               ame&nbsp;
-              <span className="text-4xl font-bold text-red-500">C</span>enter
-            </h1>
-            {/* <marquee behavior="" direction="left" className="w-full">
+              <span className="text-4xl font-bold text-lime-400">C</span>
+              enter
+            </NavLink>
+            <marquee behavior="" direction="left" className="w-full">
               {dataInfo.map((info, index) => (
                 <>
                   <i className="bi-playstation text-gray-200"></i>
@@ -82,32 +86,32 @@ function App() {
                 </>
               ))}
               <i className="bi-playstation text-gray-200"></i>
-            </marquee> */}
-            <div className="w-full flex justify-center items-center gap-4">
-              <NavLink
-                to={"/"}
-                className="text-gray-200 hover:text-white transition-all duration-300"
-              >
-                Beranda
-              </NavLink>
-              <NavLink
-                to={"/billing"}
-                className="text-gray-200 hover:text-white transition-all duration-300"
-              >
-                Billing
-              </NavLink>
-              <NavLink
-                to={"/payment"}
-                className="text-gray-200 hover:text-white transition-all duration-300"
-              >
-                Payment
-              </NavLink>
-            </div>
+            </marquee>
             <div className="w-2/12 me-2 ms-1 py-1 pe-3 rounded-full bg-gray-200 text-black flex flex-col justify-center items-end font-mono text-[0.6rem]">
               <span className="block">{tanggalHariIni}</span>
               <span className="block">{jamBerjalan}</span>
             </div>
           </div>
+          {/* <div className="w-full flex justify-center items-center gap-8">
+            <NavLink
+              to={"/"}
+              className="text-gray-400 hover:text-black hover:underline transition-all duration-300"
+            >
+              Beranda
+            </NavLink>
+            <NavLink
+              to={"/billing"}
+              className="text-gray-400 hover:text-black hover:underline transition-all duration-300"
+            >
+              Billing
+            </NavLink>
+            <NavLink
+              to={"/payment"}
+              className="text-gray-400 hover:text-black hover:underline transition-all duration-300"
+            >
+              Payment
+            </NavLink>
+          </div> */}
 
           {/* <button onClick={() => snap.pay("<SNAP_TOKEN>")}>Pay</button> */}
           {/* <div className="w-4/12 relative h-screen">
