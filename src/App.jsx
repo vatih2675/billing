@@ -76,7 +76,7 @@ function App() {
           ))}
           <i className="bi-playstation text-gray-200"></i>
         </marquee>
-        <div className="w-2/12 me-2 ms-1 py-1 pe-3 rounded-full bg-gray-200 text-black flex flex-col justify-center items-end font-mono text-[0.7rem]">
+        <div className="w-2/12 me-2 ms-1 py-1 pe-3 rounded-full bg-gray-200 text-black flex flex-col justify-center items-end font-mono text-[0.65rem]">
           <span className="block">{tanggalHariIni}</span>
           <span className="block">{jamBerjalan}</span>
         </div>
