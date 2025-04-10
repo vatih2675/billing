@@ -31,4 +31,5 @@ export const dataInfo = [
   "BCA : 7975625991",
   "DANA : 0895708460123",
   "OVO : 0895708460123",
+  "QRIS : Vatih Game Center",
 ];
