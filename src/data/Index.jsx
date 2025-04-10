@@ -26,5 +26,9 @@ export const dataBilling = [
 ]
 
 export const dataInfo = [
-    "Vatih Game Center"
-]
+  "Vatih Game Center",
+  "Pembayaran bisa melalui Tunai dan Non Tunai",
+  "BCA : 7975625991",
+  "DANA : 0895708460123",
+  "OVO : 0895708460123",
+];
