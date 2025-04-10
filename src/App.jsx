@@ -1,5 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import Payment from "./pages/Payment";
 import Billing from "./pages/Billing";
 import Home from "./pages/Home";
@@ -72,7 +72,7 @@ function App() {
               ame&nbsp;
               <span className="text-4xl font-bold text-red-500">C</span>enter
             </h1>
-            <marquee behavior="" direction="left" className="w-full">
+            {/* <marquee behavior="" direction="left" className="w-full">
               {dataInfo.map((info, index) => (
                 <>
                   <i className="bi-playstation text-gray-200"></i>
@@ -82,7 +82,27 @@ function App() {
                 </>
               ))}
               <i className="bi-playstation text-gray-200"></i>
-            </marquee>
+            </marquee> */}
+            <div className="w-full flex justify-center items-center gap-4">
+              <NavLink
+                to={"/"}
+                className="text-gray-200 hover:text-white transition-all duration-300"
+              >
+                Beranda
+              </NavLink>
+              <NavLink
+                to={"/billing"}
+                className="text-gray-200 hover:text-white transition-all duration-300"
+              >
+                Billing
+              </NavLink>
+              <NavLink
+                to={"/payment"}
+                className="text-gray-200 hover:text-white transition-all duration-300"
+              >
+                Payment
+              </NavLink>
+            </div>
             <div className="w-2/12 me-2 ms-1 py-1 pe-3 rounded-full bg-gray-200 text-black flex flex-col justify-center items-end font-mono text-[0.6rem]">
               <span className="block">{tanggalHariIni}</span>
               <span className="block">{jamBerjalan}</span>
