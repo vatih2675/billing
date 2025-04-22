@@ -5,8 +5,11 @@ import Billing from "./pages/Billing";
 import Home from "./pages/Home";
 import { useEffect, useState } from "react";
 import { dataInfo } from "./data/Index";
+import axios from "axios";
 
 function App() {
+  const API_URL = "http://localhost:8000/";
+
   function timeSpend(time) {
     return time;
   }
@@ -62,7 +65,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <section className="w-full p-4">
+        <section className="w-full p-4 cursor-default">
           <div className="w-full rounded-4xl flex mb-4 bg-gray-950 text-white justify-center items-center sticky top-4">
             <NavLink
               to={"/billing"}
@@ -78,12 +81,10 @@ function App() {
             </NavLink>
             <marquee behavior="" direction="left" className="w-full">
               {dataInfo.map((info, index) => (
-                <>
+                <div key={index} className="inline-block">
                   <i className="bi-playstation text-gray-200"></i>
-                  <span key={index} className="mx-4">
-                    {info}
-                  </span>
-                </>
+                  <span className="mx-4">{info}</span>
+                </div>
               ))}
               <i className="bi-playstation text-gray-200"></i>
             </marquee>
@@ -122,7 +123,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/billing" element={<Billing />} />
-          <Route path="/payment" element={<Payment />} />
+          <Route path="/payment" element={<Payment apiUrl={API_URL} />} />
         </Routes>
       </BrowserRouter>
       <Analytics />

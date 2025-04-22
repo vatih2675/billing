@@ -1,9 +1,7 @@
 import Stopwatch from "./Stopwatch";
 import { dataBilling, dataInfo } from "../data/Index";
 
-
-const Billing = () => {
-    
+function Billing() {
   return (
     <div className="w-full flex justify-center items-center gap-4 flex-wrap">
       {dataBilling.map((item) => (
